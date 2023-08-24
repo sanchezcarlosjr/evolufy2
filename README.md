@@ -5,18 +5,19 @@ A Browser-based Investment Portfolio Optimization Library Utilizing Genetic Algo
 
 # Datasets
 ## Mexico Issuers
-We got the Mexico issuers dataset from https://databursatil.com/docs.html#emisoras after applying
+We got the Mexico issuers dataset from [emisoras](https://databursatil.com/docs.html#emisoras) after applying
 
 ```bash
 [.[] | to_entries[] | .value[] + {"Nombre": .key}]
 ```
 
 ## History
-We got the Mexico issuers dataset from https://databursatil.com/docs.html#emisoras after applying
-https://databursatil.com/docs.html#historicos
+We got the Mexico issuers dataset from [historicos](https://databursatil.com/docs.html#historicos) after applying
+```bash
 [.[] 
 | to_entries[] 
 | .value[] + {"Nombre": .key} 
 | select( .Estatus | contains("ACTIVA")) 
 | @uri "https://api.databursatil.com/v1/historicos?token=[token]&inicio=1990-01-01&final=2023-08-23&emisora_serie=\(.Nombre)\(.Serie)"
 ] 
+```
