@@ -18,6 +18,6 @@ We got the Mexico prices history dataset from [historicos](https://databursatil.
 | to_entries[] 
 | .value[] + {"Nombre": .key} 
 | select( .Estatus | contains("ACTIVA")) 
-| @uri "https://api.databursatil.com/v1/historicos?token=[token]&inicio=1990-01-01&final=2023-08-23&emisora_serie=\(.Nombre)\(.Serie)"
+| "\(.Nombre)\(.Serie)"
 ] 
 ```
