@@ -12,7 +12,7 @@ We got the Mexico issuers dataset from [emisoras](https://databursatil.com/docs.
 ```
 
 ## History
-We got the Mexico issuers dataset from [historicos](https://databursatil.com/docs.html#historicos) after applying
+We got the Mexico prices history dataset from [historicos](https://databursatil.com/docs.html#historicos) after applying
 ```bash
 [.[] 
 | to_entries[] 
